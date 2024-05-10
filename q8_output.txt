@@ -1,0 +1,5 @@
+dog: 4
+cat: 3
+mouse: 2
+eric: 1
+zoo: 1
