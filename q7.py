@@ -40,6 +40,3 @@ assert question_7("123 ! 321") == True
 
 # success message
 print('question_7() tests passed')
-
-
-

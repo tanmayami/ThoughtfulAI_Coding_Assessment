@@ -144,14 +144,14 @@ class Library:
 def challenge_question():
     # code below tests out basic functionality of Library Management System
 
-    book1 = Book("Clean Code: A Handbook of Agile Software Craftsmanship", "Robert C. Martin", "978-0132350884")
-    book2 = Book("Design Patterns: Elements of Reusable Object-Oriented Software", "Erich Gamma", "978-0201633610")
-    book3 = Book("Introduction to Algorithms", "Thomas H. Cormen and Charles E. Leiserson", "978-0262033848")
-    book4 = Book("The Pragmatic Programmer", "Andrew Hunt & David Thomas", "978-0135957059")
+    book1 = Book("Book1", "Author1", "000-1234567")
+    book2 = Book("Book2", "Author2", "000-9889201")
+    book3 = Book("Book3", "Author3", "000-0262038")
+    book4 = Book("Book4", "Author4", "000-0137059")
     member1 = Member("Alan", 1)
     member2 = Member("Ada", 2)
     member3 = Member("Grace", 3)
-    library = Library("Computer Science Library")
+    library = Library("Test Library")
 
     # Add books to the library
     library.add_book(book1)
@@ -171,12 +171,12 @@ def challenge_question():
 
     print("BOOKS CHECKED OUT")
     print("------------------")
-    library.check_out_book(1, "978-0132350884")  # Alan checks out Clean Code
-    library.check_out_book(2, "978-0201633610")  # Ada checks out Design Patterns
-    library.check_out_book(3, "978-0262033848")  # Grace checks out Introduction to Algorithms
-    library.check_out_book(1, "978-0262033848")  # Alan fails to checkout Introduction to Algorithms
-    library.check_out_book(1, "978-0135957059")  # Alan checks out Pragmatic Programmer
-    library.check_out_book(1, "000-0000000000")  # Alan cannot checkout a book that doesn't exist
+    library.check_out_book(1, "000-1234567")  # Alan checks out Book1
+    library.check_out_book(2, "000-9889201")  # Ada checks out Book2
+    library.check_out_book(3, "000-0262038")  # Grace checks out Book3
+    library.check_out_book(1, "000-1234567")  # Alan fails to checkout Book1
+    library.check_out_book(1, "000-0137059")  # Alan checks out Book4
+    library.check_out_book(1, "000-0000000")  # Alan cannot checkout a book that doesn't exist
     print()
 
     print('BOOKED CHECKED OUT BY MEMBERS')
@@ -189,7 +189,7 @@ def challenge_question():
     
     print('RETURNS')
     print('-------')
-    library.return_book(1, "978-0132350884")  # Alan returns Clean Code
+    library.return_book(1, "000-1234567")  # Alan returns Book1
     library.get_member_books(1)
 
 #invoke library system

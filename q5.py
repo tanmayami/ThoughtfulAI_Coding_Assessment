@@ -18,10 +18,17 @@ Instructions
 # However, if the denominator is zero, the function should return -1.
 def question_5(numerator, denominator):
     # input check
-    if type(numerator) == str: assert numerator.isnumeric()
-    if type(denominator) == str: assert denominator.isnumeric()
-    numerator = float(numerator)
-    denominator = float(denominator)
+    if type(numerator) == str: 
+        try:
+            numerator = float(numerator)
+        except:
+            return 'Invalid Input'
+        
+    if type(denominator) == str:
+        try:
+            denominator = float(denominator)
+        except:
+            return 'Invalid Input'
 
     # function definition
     def divide_numbers(numerator, denominator):
@@ -29,14 +36,16 @@ def question_5(numerator, denominator):
     
     return divide_numbers(numerator,denominator)
     
+    
 # tests
-assert question_5('10','1') == 10
 assert question_5(1,0) == -1
 assert question_5(2,1) == 2
-assert question_5(-7,1) == -7
 assert question_5(80,-2) == -40
-assert question_5(80,0.5) == 160
 assert round(question_5(10,3),2) == 3.33
+assert question_5(80,'0.5') == 160
+assert question_5('-7',1) == -7
+assert question_5('10','1') == 10
+assert question_5('Pi','Pi') == "Invalid Input"
 
 # success message
 print('question_5() tests passed')

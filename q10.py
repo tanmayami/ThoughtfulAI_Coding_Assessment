@@ -35,6 +35,7 @@ assert question_10(1) == 1
 assert question_10(2) == 1
 assert question_10(5) == 5
 assert question_10(10) == 55
+assert question_10(30) == 832040
 
 # success message 
 print('question_10() tests passed')
